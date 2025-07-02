@@ -1,4 +1,4 @@
-export const deportes = [
+const deportes = [
   {
     nombre: "Fútbol",
     descripcion: "Deporte en equipo donde se intenta anotar goles pateando una pelota.",

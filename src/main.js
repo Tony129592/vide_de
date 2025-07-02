@@ -1,28 +1,24 @@
-import { deportes } from './variables.js';
-import Handlebars from 'handlebars';
+import './style.css'
+import javascriptLogo from './javascript.svg'
+import viteLogo from '/vite.svg'
+import { setupCounter } from './counter.js'
 
-const plantilla = `
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Deporte</th>
-        <th>Descripción</th>
-        <th>Requerimientos</th>
-        <th>Ranking (1-5)</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each deportes}}
-        <tr>
-          <td>{{nombre}}</td>
-          <td>{{descripcion}}</td>
-          <td>{{requerimientos}}</td>
-          <td>{{ranking}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-`;
+document.querySelector('#app').innerHTML = `
+  <div>
+    <a href="https://vite.dev" target="_blank">
+      <img src="${viteLogo}" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <h1>Hello Vite!</h1>
+    <div class="card">
+      <button id="counter" type="button"></button>
+    </div>
+    <p class="read-the-docs">
+      Click on the Vite logo to learn more
+    </p>
+  </div>
+`
 
-const template = Handlebars.compile(plantilla);
-document.getElementById('contenido').innerHTML = template({ deportes });
+setupCounter(document.querySelector('#counter'))
